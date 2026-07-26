@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=EB+Garamond:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#faf6ec; --paper2:#f4edda; --ink:#3a3d47; --ink-soft:#6b7080;
@@ -36,9 +36,10 @@ a{color:var(--ribbon)}
 .noren{height:56px;background:repeating-linear-gradient(90deg,#fdfbf4 0 46px,var(--ribbon-soft) 46px 92px);
   -webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent);
   position:relative;z-index:5}
-.noren span{position:absolute;left:50%;top:14px;transform:translateX(-50%);
-  font-family:var(--serif);font-size:14px;letter-spacing:.5em;text-indent:.5em;color:#fff;
-  text-shadow:0 1px 3px rgba(50,80,120,.55);white-space:nowrap}
+.noren span{position:absolute;left:50%;top:17px;transform:translateX(-50%);
+  font-family:"EB Garamond",serif;font-weight:600;font-size:12.5px;letter-spacing:.34em;text-indent:.34em;
+  color:var(--ribbon);white-space:nowrap;
+  text-shadow:0 1px 0 rgba(255,255,255,.85)}
 
 /* ===== ヒーロー ===== */
 .hero{position:relative;min-height:92svh;display:flex;flex-direction:column;justify-content:flex-end;
@@ -130,10 +131,19 @@ section{padding:8px 22px 62px;max-width:960px;margin:0 auto}
   box-shadow:0 12px 30px rgba(110,90,55,.25);border:6px solid #fff}
 .promo video{width:100%;display:block}
 
+/* ===== SNS ===== */
+.social{margin-top:48px}
+.sns{display:inline-flex;width:40px;height:40px;border-radius:50%;align-items:center;justify-content:center;
+  background:#fffdf7;border:1.5px solid var(--ribbon-soft);color:var(--ribbon);
+  box-shadow:0 4px 12px rgba(70,90,120,.18);transition:transform .18s}
+.sns svg{width:18px;height:18px}
+.sns:hover{transform:translateY(-3px)}
+.sns-label{display:block;margin-top:6px;font-size:10px;letter-spacing:.3em;text-indent:.3em;color:var(--ink-soft)}
+
 /* ===== フッター ===== */
 footer{background:linear-gradient(var(--paper), #f0e6cf);padding:52px 22px 40px;text-align:center}
 footer .fin{font-family:var(--serif);font-size:17px;letter-spacing:.24em;margin-bottom:22px}
-footer .credit{margin-top:30px;font-size:11.5px;letter-spacing:.2em;color:var(--ink-soft);line-height:2.2}
+footer .credit{margin-top:14px;font-size:11.5px;letter-spacing:.2em;color:var(--ink-soft);line-height:2.2}
 
 /* ===== デスクトップ ===== */
 @media (min-width:820px){
@@ -150,7 +160,7 @@ footer .credit{margin-top:30px;font-size:11.5px;letter-spacing:.2em;color:var(--
 </head>
 <body>
 
-<div class="noren"><span>渚のふたり</span></div>
+<div class="noren"><span>NAGISA NO FUTARI</span></div>
 
 <header class="hero">
   <div class="hero-inner">
@@ -260,7 +270,13 @@ footer .credit{margin-top:30px;font-size:11.5px;letter-spacing:.2em;color:var(--
 <footer>
   <p class="fin">この夏の続きは、店先で。</p>
   <a class="cta" href="beach-house/">今すぐ、海の家をひらく</a>
-  <p class="credit">story &amp; art : Renfew<br>© 2026 Renfew All Rights Reserved.</p>
+  <div class="social">
+    <a class="sns" href="https://www.tiktok.com/@renfew_ito" target="_blank" rel="noopener" aria-label="TikTokで最新情報を見る">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.5a4 4 0 1 1-3.2-3.9"/><path d="M14 4c.4 2.9 2.3 4.7 5 5"/></svg>
+    </a>
+    <span class="sns-label">TikTok</span>
+  </div>
+  <p class="credit">© 2026 Renfew All Rights Reserved.</p>
 </footer>
 
 <script>
