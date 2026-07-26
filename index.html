@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>りくすば日記</title>
+<meta name="description" content="創作BL「りくすば日記」公式サイト。">
+<style>
+:root{
+  --paper:#faf6ec; --ink:#3a3d47; --ink-soft:#6b6f7c;
+  --sea-deep:#7db4d2; --ribbon:#3b6ea5; --straw:#d9b26a;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+  --sans:"Hiragino Kaku Gothic ProN","Yu Gothic",-apple-system,"Segoe UI",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  min-height:100dvh; display:grid; place-items:center; padding:2rem 1.5rem;
+  background:linear-gradient(170deg,#e9f2f7 0%,var(--paper) 55%,#f4edda 100%);
+  font-family:var(--sans); color:var(--ink); text-align:center;
+}
+main{max-width:32rem}
+h1{font-family:var(--serif); font-size:clamp(1.9rem,7vw,2.9rem); letter-spacing:.08em; font-weight:500}
+.rule{width:3.5rem; height:2px; background:var(--straw); margin:1.4rem auto; border-radius:2px}
+.note{color:var(--ink-soft); font-size:.95rem; line-height:1.9}
+.card{
+  margin-top:2.5rem; padding:1.75rem 1.5rem; background:rgba(255,255,255,.6);
+  border:1px solid rgba(125,180,210,.35); border-radius:14px;
+}
+.card h2{font-family:var(--serif); font-size:1.1rem; font-weight:500; letter-spacing:.04em}
+.card p{margin-top:.5rem; color:var(--ink-soft); font-size:.85rem}
+a.play{
+  display:inline-block; margin-top:1.25rem; padding:.8rem 2.2rem; border-radius:999px;
+  background:var(--ribbon); color:#fff; text-decoration:none; font-size:.95rem; letter-spacing:.06em;
+}
+a.play:hover{background:var(--sea-deep)}
+a.play:focus-visible{outline:3px solid var(--straw); outline-offset:3px}
+</style>
+</head>
+<body>
+<main>
+  <h1>りくすば日記</h1>
+  <div class="rule"></div>
+  <p class="note">公式サイトは現在制作中です。<br>先行してブラウザゲームを公開しています。</p>
+
+  <div class="card">
+    <h2>渚のふたり計画</h2>
+    <p>理来と昴の海の家</p>
+    <a class="play" href="beach-house/">遊ぶ</a>
+  </div>
+</main>
+</body>
+</html>
