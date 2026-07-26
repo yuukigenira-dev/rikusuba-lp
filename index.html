@@ -2,51 +2,272 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>りくすば日記</title>
-<meta name="description" content="創作BL「りくすば日記」公式サイト。">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>渚のふたり計画 — 理来と昴の、海の家七日間。</title>
+<meta name="description" content="恋人同士の理来と昴が、ふたりきりで海の家を任された七日間。かき氷を削って、ラムネを開けて、閉店後の浜辺はふたりのもの。ブラウザで、無料で遊べる夏のノベル×お店やさんゲーム。">
+<meta property="og:title" content="渚のふたり計画">
+<meta property="og:description" content="理来と昴の、海の家七日間。ブラウザで無料で遊べる夏のBLノベル×お店やさんゲーム。">
+<meta property="og:image" content="https://yuukigenira-dev.github.io/rikusuba-lp/assets/ogp.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#faf6ec; --ink:#3a3d47; --ink-soft:#6b6f7c;
-  --sea-deep:#7db4d2; --ribbon:#3b6ea5; --straw:#d9b26a;
-  --serif:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
-  --sans:"Hiragino Kaku Gothic ProN","Yu Gothic",-apple-system,"Segoe UI",sans-serif;
+  --paper:#faf6ec; --paper2:#f4edda; --ink:#3a3d47; --ink-soft:#6b7080;
+  --ribbon:#3b6ea5; --ribbon-soft:#7d9fc9; --mizu:#a9cfe2; --mizu-pale:#dcebf3;
+  --straw:#d9b26a; --coral:#e8919e; --sand:#ecdfc0; --sunset:#f4c48e;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  min-height:100dvh; display:grid; place-items:center; padding:2rem 1.5rem;
-  background:linear-gradient(170deg,#e9f2f7 0%,var(--paper) 55%,#f4edda 100%);
-  font-family:var(--sans); color:var(--ink); text-align:center;
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.9;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.45;
+  background:radial-gradient(rgba(120,100,70,.05) 1px,transparent 1.6px);background-size:5px 5px}
+img,video{max-width:100%;display:block}
+a{color:var(--ribbon)}
+:focus-visible{outline:3px solid var(--ribbon);outline-offset:3px}
+
+/* ===== のれん帯(ページ最上部) ===== */
+.noren{height:56px;background:repeating-linear-gradient(90deg,#fdfbf4 0 46px,var(--ribbon-soft) 46px 92px);
+  -webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent);
+  position:relative;z-index:5}
+.noren span{position:absolute;left:50%;top:14px;transform:translateX(-50%);
+  font-family:var(--serif);font-size:14px;letter-spacing:.5em;text-indent:.5em;color:#fff;
+  text-shadow:0 1px 3px rgba(50,80,120,.55);white-space:nowrap}
+
+/* ===== ヒーロー ===== */
+.hero{position:relative;min-height:92svh;display:flex;flex-direction:column;justify-content:flex-end;
+  background:url(assets/hero.jpg) center 18%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(rgba(250,246,236,0) 40%, rgba(250,246,236,.72) 72%, var(--paper) 96%)}
+.hero-inner{position:relative;padding:0 24px 46px;max-width:640px;margin:0 auto;width:100%;text-align:center}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,11vw,64px);
+  letter-spacing:.14em;line-height:1.3;color:var(--ink);
+  text-shadow:0 0 16px rgba(250,246,236,.95),0 0 6px rgba(250,246,236,.9),0 2px 3px rgba(250,246,236,.9)}
+.hero h1 b{color:var(--ribbon);font-weight:700}
+.hero .sub{font-family:var(--serif);font-size:15px;letter-spacing:.3em;margin-top:10px;color:var(--ink)}
+.cta{display:inline-block;margin-top:26px;font-family:var(--serif);font-size:18px;font-weight:700;
+  letter-spacing:.22em;text-indent:.22em;color:#fff;background:var(--ribbon);text-decoration:none;
+  padding:17px 42px;border-radius:999px;box-shadow:0 8px 22px rgba(59,110,165,.4);
+  transition:transform .18s, box-shadow .18s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(59,110,165,.45)}
+.hero .note{margin-top:14px;font-size:12px;letter-spacing:.14em;color:var(--ink-soft)}
+.hero .note i{font-style:normal;margin:0 .5em}
+
+/* ===== 波の区切り ===== */
+.wave{display:block;width:100%;height:34px;color:var(--mizu)}
+
+/* ===== セクション共通 ===== */
+section{padding:8px 22px 62px;max-width:960px;margin:0 auto}
+.tag{display:inline-block;position:relative;left:50%;transform:translateX(-50%);
+  font-family:var(--serif);font-weight:600;font-size:16px;letter-spacing:.34em;text-indent:.34em;
+  color:#fff;padding:16px 26px 20px;margin-bottom:34px;
+  background:linear-gradient(rgba(90,140,193,.88),rgba(127,172,214,.8));
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),50% 100%,0 calc(100% - 8px));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);
+  filter:drop-shadow(0 4px 6px rgba(59,110,165,.3));
+  text-shadow:0 1px 2px rgba(50,80,120,.5);
+  transform-origin:top center;animation:sway 5.5s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:translateX(-50%) rotate(-.9deg)}50%{transform:translateX(-50%) rotate(.9deg)}}
+.lead{font-family:var(--serif);text-align:center;font-size:15.5px;line-height:2.3;letter-spacing:.08em;
+  max-width:560px;margin:0 auto}
+.lead .em{color:var(--ribbon)}
+
+/* フェードイン */
+.fx{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.fx.in{opacity:1;transform:none}
+
+/* ===== 特徴カード ===== */
+.feats{display:grid;gap:26px;margin-top:6px}
+.feat{background:#fffdf7;border:1px solid #e3d9bd;border-radius:18px;overflow:hidden;
+  box-shadow:0 8px 22px rgba(110,90,55,.12)}
+.feat .art{aspect-ratio:3/2;overflow:hidden;background:var(--mizu-pale)}
+.feat .art img{width:100%;height:100%;object-fit:cover}
+.feat .art.menu{display:flex;align-items:center;justify-content:center;gap:4%;padding:8%;
+  background:linear-gradient(#eaf3f8,#f6efdc)}
+.feat .art.menu img{width:13%;height:auto;object-fit:contain;filter:drop-shadow(0 4px 5px rgba(110,90,55,.2))}
+.feat .body{padding:20px 22px 24px}
+.feat h3{font-family:var(--serif);font-size:19px;letter-spacing:.14em;color:var(--ribbon);margin-bottom:8px}
+.feat p{font-size:14px;color:var(--ink);letter-spacing:.04em}
+
+/* ===== スマホ枠(動画・試遊) ===== */
+.phone{width:min(76vw,320px);margin:0 auto;border:10px solid #3d414e;border-radius:38px;
+  background:#3d414e;box-shadow:0 18px 44px rgba(58,61,71,.35);position:relative}
+.phone::before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);
+  width:64px;height:5px;border-radius:3px;background:#5a5f6e;z-index:2}
+.phone .screen{border-radius:26px;overflow:hidden;background:var(--paper2)}
+.phone video{width:100%;aspect-ratio:540/958;object-fit:cover}
+.phone iframe{width:100%;aspect-ratio:9/17;border:0;display:block}
+.under{ text-align:center;margin-top:22px}
+.btn2{display:inline-block;font-family:var(--serif);font-size:15px;letter-spacing:.2em;text-indent:.2em;
+  color:var(--ribbon);background:#fffdf7;border:1.5px solid var(--ribbon-soft);border-radius:999px;
+  padding:13px 34px;text-decoration:none;box-shadow:0 4px 12px rgba(70,90,120,.18);
+  transition:transform .18s}
+.btn2:hover{transform:translateY(-2px)}
+.capt{font-size:12px;color:var(--ink-soft);letter-spacing:.1em;text-align:center;margin-top:12px}
+
+/* ===== キャラクター ===== */
+.chars{display:grid;gap:26px}
+.char{background:#fffdf7;border:1px solid #e3d9bd;border-radius:18px;padding:24px 22px;
+  box-shadow:0 8px 22px rgba(110,90,55,.12);display:flex;gap:18px;align-items:flex-start}
+.char img{width:104px;border-radius:12px;border:4px solid #fff;
+  box-shadow:0 4px 12px rgba(110,90,55,.25);flex-shrink:0}
+.char .np{display:inline-block;font-family:var(--serif);font-size:13px;letter-spacing:.3em;text-indent:.3em;
+  color:#fff;padding:4px 14px;border-radius:3px;margin-bottom:8px}
+.char.riku .np{background:#474b58}
+.char.subaru .np{background:var(--ribbon)}
+.char h3{font-family:var(--serif);font-size:18px;letter-spacing:.1em;margin-bottom:6px}
+.char p{font-size:13.5px;letter-spacing:.03em}
+.char .q{margin-top:10px;font-family:var(--serif);font-size:14px;color:var(--ribbon);letter-spacing:.06em}
+
+/* ===== ショートムービー ===== */
+.promo{width:min(76vw,300px);margin:0 auto;border-radius:18px;overflow:hidden;
+  box-shadow:0 12px 30px rgba(110,90,55,.25);border:6px solid #fff}
+.promo video{width:100%;display:block}
+
+/* ===== フッター ===== */
+footer{background:linear-gradient(var(--paper), #f0e6cf);padding:52px 22px 40px;text-align:center}
+footer .fin{font-family:var(--serif);font-size:17px;letter-spacing:.24em;margin-bottom:22px}
+footer .credit{margin-top:30px;font-size:11.5px;letter-spacing:.2em;color:var(--ink-soft);line-height:2.2}
+
+/* ===== デスクトップ ===== */
+@media (min-width:820px){
+  .feats{grid-template-columns:1fr 1fr 1fr}
+  .chars{grid-template-columns:1fr 1fr;max-width:860px;margin:0 auto}
+  .hero{min-height:96svh}
+  .hero-inner{padding-bottom:64px}
 }
-main{max-width:32rem}
-h1{font-family:var(--serif); font-size:clamp(1.9rem,7vw,2.9rem); letter-spacing:.08em; font-weight:500}
-.rule{width:3.5rem; height:2px; background:var(--straw); margin:1.4rem auto; border-radius:2px}
-.note{color:var(--ink-soft); font-size:.95rem; line-height:1.9}
-.card{
-  margin-top:2.5rem; padding:1.75rem 1.5rem; background:rgba(255,255,255,.6);
-  border:1px solid rgba(125,180,210,.35); border-radius:14px;
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .fx{opacity:1;transform:none}
 }
-.card h2{font-family:var(--serif); font-size:1.1rem; font-weight:500; letter-spacing:.04em}
-.card p{margin-top:.5rem; color:var(--ink-soft); font-size:.85rem}
-a.play{
-  display:inline-block; margin-top:1.25rem; padding:.8rem 2.2rem; border-radius:999px;
-  background:var(--ribbon); color:#fff; text-decoration:none; font-size:.95rem; letter-spacing:.06em;
-}
-a.play:hover{background:var(--sea-deep)}
-a.play:focus-visible{outline:3px solid var(--straw); outline-offset:3px}
 </style>
 </head>
 <body>
-<main>
-  <h1>りくすば日記</h1>
-  <div class="rule"></div>
-  <p class="note">公式サイトは現在制作中です。<br>先行してブラウザゲームを公開しています。</p>
 
-  <div class="card">
-    <h2>渚のふたり計画</h2>
-    <p>理来と昴の海の家</p>
-    <a class="play" href="beach-house/">遊ぶ</a>
+<div class="noren"><span>渚のふたり</span></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>渚の<b>ふたり</b>計画</h1>
+    <p class="sub">理来と昴の、海の家七日間。</p>
+    <a class="cta" href="beach-house/">今すぐ、海の家をひらく</a>
+    <p class="note">無料<i>/</i>インストール不要<i>/</i>スマホでそのまま遊べます</p>
   </div>
-</main>
+</header>
+
+<svg class="wave" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 22 Q 60 8 120 22 T 240 22 T 360 22 T 480 22 T 600 22 T 720 22 T 840 22 T 960 22 T 1080 22 T 1200 22" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".7"/>
+  <path d="M0 30 Q 60 18 120 30 T 240 30 T 360 30 T 480 30 T 600 30 T 720 30 T 840 30 T 960 30 T 1080 30 T 1200 30" fill="none" stroke="currentColor" stroke-width="2" opacity=".4"/>
+</svg>
+
+<section id="story">
+  <div class="tag">あらすじ</div>
+  <p class="lead fx">夏休み。恋人同士の<span class="em">理来</span>と<span class="em">昴</span>は、<br>
+  ふたりきりで海の家を任された。<br><br>
+  かき氷を削って、ラムネを開けて、<br>たこ焼きをくるり。<br>
+  閉店後の浜辺は、ふたりのもの。<br><br>
+  ──七日目の夕暮れ、<br>約束の言葉が生まれる。</p>
+</section>
+
+<section id="features">
+  <div class="tag">このゲームでできること</div>
+  <div class="feats">
+    <article class="feat fx">
+      <div class="art"><img src="assets/feat_novel.jpg" alt="かき氷を食べる昴と見守る理来" loading="lazy"></div>
+      <div class="body"><h3>七日間のノベル</h3>
+      <p>開店前、昼休み、閉店後。会話と選択肢でふたりの絆を育てます。選んだ言葉が、最後の夜を変えていく。</p></div>
+    </article>
+    <article class="feat fx">
+      <div class="art menu">
+        <img src="assets/menu_kakigori.png" alt="かき氷"><img src="assets/menu_drink.png" alt="ラムネ">
+        <img src="assets/menu_icebar.png" alt="アイスバー"><img src="assets/menu_yakisoba.png" alt="焼そば">
+        <img src="assets/menu_takoyaki.png" alt="たこ焼き"><img src="assets/menu_ukiwa.png" alt="浮き輪">
+      </div>
+      <div class="body"><h3>お店やさんミニゲーム</h3>
+      <p>しゃかしゃか削って、ぽんっと開けて、くるっと返す。指先ひとつで遊べる6種のお仕事で、お客さんをもてなします。</p></div>
+    </article>
+    <article class="feat fx">
+      <div class="art"><img src="assets/feat_end.jpg" alt="花火の下のふたり" loading="lazy"></div>
+      <div class="body"><h3>ふたつの夏の結末</h3>
+      <p>売上と絆で変わるエンディング。深まったその先に、「ずっと」が始まる花火の夜が待っています。</p></div>
+    </article>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 22 Q 60 8 120 22 T 240 22 T 360 22 T 480 22 T 600 22 T 720 22 T 840 22 T 960 22 T 1080 22 T 1200 22" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".7"/>
+</svg>
+
+<section id="movie">
+  <div class="tag">店先のようす</div>
+  <div class="phone fx"><div class="screen">
+    <video src="assets/loop.mp4" poster="assets/loop_poster.jpg" autoplay muted loop playsinline></video>
+  </div></div>
+  <p class="capt">実際のプレイ画面(音は出ません)</p>
+</section>
+
+<section id="play">
+  <div class="tag">のれんを、くぐってみる</div>
+  <div class="phone fx"><div class="screen">
+    <iframe src="beach-house/" title="渚のふたり計画をこの場で遊ぶ" loading="lazy"></iframe>
+  </div></div>
+  <div class="under">
+    <a class="btn2" href="beach-house/">全画面でプレイする</a>
+  </div>
+  <p class="capt">この場でそのまま遊べます / タップすると音が出ます</p>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 22 Q 60 8 120 22 T 240 22 T 360 22 T 480 22 T 600 22 T 720 22 T 840 22 T 960 22 T 1080 22 T 1200 22" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".7"/>
+</svg>
+
+<section id="chars">
+  <div class="tag">ふたりの店員</div>
+  <div class="chars">
+    <article class="char riku fx">
+      <img src="assets/riku.jpg" alt="理来">
+      <div><span class="np">理 来</span>
+        <h3>Riku</h3>
+        <p>クールな店長格。口数は少ないけれど、飛んだ帽子も、よろけた恋人も、手が先に受け止める。</p>
+        <p class="q">「帽子より、昴が飛びそうだった」</p>
+      </div>
+    </article>
+    <article class="char subaru fx">
+      <img src="assets/subaru.jpg" alt="昴">
+      <div><span class="np">昴</span>
+        <h3>Subaru</h3>
+        <p>ひだまりの看板店員。青いリボンの麦わら帽子がトレードマーク。笑顔ひとつで客も恋人も呼び寄せる。</p>
+        <p class="q">「……じゃあ、ずっと」</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="promo">
+  <div class="tag">ショートムービー</div>
+  <div class="promo fx">
+    <video src="assets/promo.mp4" controls preload="none" poster="assets/ogp.jpg" playsinline></video>
+  </div>
+  <p class="capt">10秒でわかる『渚のふたり計画』(音が出ます)</p>
+</section>
+
+<footer>
+  <p class="fin">この夏の続きは、店先で。</p>
+  <a class="cta" href="beach-house/">今すぐ、海の家をひらく</a>
+  <p class="credit">story &amp; art : Renfew<br>© 2026 Renfew All Rights Reserved.</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.18});
+document.querySelectorAll('.fx').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>

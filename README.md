@@ -7,9 +7,13 @@ GitHub Pages で配信：https://yuukigenira-dev.github.io/rikusuba-lp/
 ## 構成
 
 ```
-/                    LPサイト（制作中 — 現在はプレースホルダ）
+/index.html          LPサイト
+/assets/             LP用アセット（画像・動画）
 /beach-house/        ブラウザゲーム「渚のふたり計画 — 理来と昴の海の家」
 ```
+
+LPからゲームへは相対パス `beach-house/` で参照している（CTAリンク3箇所と試遊iframe 1箇所）。
+LP側のディレクトリ名を変更するとこれらが壊れる点に注意。
 
 ## /beach-house/ について
 
