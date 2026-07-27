@@ -36,10 +36,16 @@ a{color:var(--ribbon)}
 .noren{height:56px;background:repeating-linear-gradient(90deg,#fdfbf4 0 46px,var(--ribbon-soft) 46px 92px);
   -webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent);
   position:relative;z-index:5}
-.noren .home{position:absolute;left:16px;top:17px;font-family:"EB Garamond",serif;font-weight:600;
-  font-size:11px;letter-spacing:.24em;color:var(--ribbon);text-decoration:none;opacity:.85;
-  text-shadow:0 1px 0 rgba(255,255,255,.85)}
+.noren .home{position:absolute;left:12px;top:13px;z-index:2;display:inline-flex;align-items:center;gap:7px;
+  padding:5px 8px;font-family:"EB Garamond",serif;font-weight:600;
+  font-size:11px;letter-spacing:.24em;color:var(--ribbon);text-decoration:none;opacity:.9;
+  text-shadow:0 1px 0 rgba(255,255,255,.9)}
 .noren .home:hover{opacity:1}
+.noren .home svg{width:15px;height:15px;flex-shrink:0;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.9))}
+.noren .home i{display:none;font-style:normal;white-space:nowrap;
+  font-family:var(--serif);letter-spacing:.14em;font-size:12px}
+@media (min-width:680px){ .noren .home i{display:inline} }
 .noren span{position:absolute;left:50%;top:17px;transform:translateX(-50%);
   font-family:"EB Garamond",serif;font-weight:600;font-size:12.5px;letter-spacing:.34em;text-indent:.34em;
   color:var(--ribbon);white-space:nowrap;
@@ -175,7 +181,7 @@ footer .credit{margin-top:14px;font-size:11.5px;letter-spacing:.2em;color:var(--
 </head>
 <body>
 
-<div class="noren"><a class="home" href="../">RIKU &amp; SUBARU</a><span>NAGISA NO FUTARI</span></div>
+<div class="noren"><a class="home" href="../" aria-label="りくすば日記 トップへ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><i>りくすば日記</i></a><span>NAGISA NO FUTARI</span></div>
 
 <header class="hero">
   <div class="hero-inner">

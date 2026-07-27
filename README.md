@@ -1,22 +1,25 @@
-# りくすば（理来 × 昴）総合サイト
+# りくすば日記 — RIKUSUBA DIARY
 
-創作BL「りくすば日記」（理来 × 昴）の総合ポータルと、作品ごとのLP・ブラウザゲームの
-ホスティング用リポジトリ。
+創作BL『りくすば日記』（理来 × 昴）のIPサイト。ポータルと、作品ごとのLP・
+ブラウザゲームをまとめてホスティングしている。
 
 GitHub Pages で配信：https://yuukigenira-dev.github.io/rikusuba-lp/
 
 ## 構成
 
 ```
-/index.html                     総合ポータル（作品一覧）
+/index.html                     IPポータル（ABOUT / WORKS）
 /assets/                        ポータル用アセット
 /beach-house/index.html         「渚のふたり計画」ゲームLP
 /beach-house/assets/            ゲームLP用アセット（画像・動画）
 /beach-house/game/index.html    ゲーム本体（単一HTML・約4.8MB）
 ```
 
+ポータルの WORKS は3件。ゲーム（`beach-house/`）、番外編（TikTokへ外部リンク）、
+本編漫画（制作中、リンクなしのカード）。
+
 作品を追加するときは `/<作品スラッグ>/` を切り、その中に `index.html`（LP）・`assets/`・
-`game/` を置く。ポータルの WORKS セクションにカードを1枚足せば導線がつながる。
+必要なら `game/` を置く。ポータルの WORKS にカードを1枚足せば導線がつながる。
 
 ## 導線とパスの約束
 
@@ -25,7 +28,7 @@ GitHub Pages で配信：https://yuukigenira-dev.github.io/rikusuba-lp/
 | 参照元 | 参照先 | 書き方 |
 |---|---|---|
 | ポータル | ゲームLP | `beach-house/` |
-| ゲームLP | ポータル（のれん左端） | `../` |
+| ゲームLP | ポータル（のれん左端の矢印） | `../` |
 | ゲームLP | ゲーム本体 | `game/`（CTA 3箇所＋試遊iframe 1箇所） |
 
 例外は2種類だけ。
@@ -36,6 +39,24 @@ GitHub Pages で配信：https://yuukigenira-dev.github.io/rikusuba-lp/
   遷移させる必要があるため、`target="_top"` とルートの絶対URLを使っている
 
 いずれも独自ドメインへ移行する際は書き換えが必要。
+
+## のれん帯のレイアウト
+
+ゲームLPののれんは、左端にポータルへ戻るリンク、中央に作品ロゴを絶対配置している。
+狭い画面で両者が重ならないよう、左端のラベル（`.noren .home i`）は既定で `display:none`、
+`@media (min-width:680px)` でのみ表示する。狭い画面では矢印アイコンだけが出る。
+
+実測での間隔（中央ロゴの左端 − 左リンクの右端）：
+
+| 画面幅 | ラベル | 間隔 |
+|---|---|---|
+| 360px | 非表示 | 41.8px |
+| 375px | 非表示 | 49.3px |
+| 390px | 非表示 | 56.8px |
+| 430px | 非表示 | 76.8px |
+| 680px（ラベル表示の境界） | 表示 | 112.7px |
+
+のれんの文言や左リンクのラベルを長くするときは、この間隔が詰まらないか確認すること。
 
 ## ゲーム本体（/beach-house/game/）について
 

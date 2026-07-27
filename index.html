@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>理来と昴 — Renfew</title>
-<meta name="description" content="理来と昴、ふたりの物語。ブラウザで遊べるゲームや作品を公開しています。">
-<meta property="og:title" content="理来と昴">
-<meta property="og:description" content="理来と昴、ふたりの物語。ブラウザで遊べるゲームや作品を公開しています。">
+<title>りくすば日記 — ふたりの、いくつもの季節。</title>
+<meta name="description" content="理来と昴、ふたりの日々を描くBL作品『りくすば日記』。本編漫画、TikTokの番外編、ブラウザゲーム『渚のふたり計画』を公開しています。">
+<meta property="og:title" content="りくすば日記">
+<meta property="og:description" content="ふたりの、いくつもの季節。理来と昴の日々を描くBL作品。">
 <meta property="og:image" content="https://yuukigenira-dev.github.io/rikusuba-lp/assets/ogp.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -38,20 +38,20 @@ img{max-width:100%;display:block}
   font-family:"EB Garamond",serif;font-weight:600;font-size:12.5px;letter-spacing:.34em;text-indent:.34em;
   color:var(--ribbon);white-space:nowrap;text-shadow:0 1px 0 rgba(255,255,255,.85)}
 
-.hero{position:relative;min-height:74svh;display:flex;flex-direction:column;justify-content:flex-end;
-  background:url(assets/hero_pair.jpg) center 32%/cover no-repeat}
+.hero{position:relative;min-height:76svh;display:flex;flex-direction:column;justify-content:flex-end;
+  background:url(assets/hero_pair.jpg) center 30%/cover no-repeat}
 .hero::before{content:"";position:absolute;inset:0;
-  background:linear-gradient(rgba(250,246,236,0) 34%, rgba(250,246,236,.7) 70%, var(--paper) 96%)}
-.hero-inner{position:relative;padding:0 24px 44px;max-width:640px;margin:0 auto;width:100%;text-align:center}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,10vw,58px);
-  letter-spacing:.2em;line-height:1.3;
+  background:linear-gradient(rgba(250,246,236,0) 32%, rgba(250,246,236,.72) 70%, var(--paper) 96%)}
+.hero-inner{position:relative;padding:0 24px 46px;max-width:640px;margin:0 auto;width:100%;text-align:center}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,10.5vw,58px);
+  letter-spacing:.18em;line-height:1.3;
   text-shadow:0 0 16px rgba(250,246,236,.95),0 0 6px rgba(250,246,236,.9)}
 .hero .sub{font-family:"EB Garamond",serif;font-size:14px;letter-spacing:.36em;text-indent:.36em;
   margin-top:10px;color:var(--ribbon)}
-.hero .lead{font-family:var(--serif);font-size:14.5px;letter-spacing:.08em;margin-top:16px;line-height:2.1}
+.hero .lead{font-family:var(--serif);font-size:15px;letter-spacing:.1em;margin-top:18px}
 
 .wave{display:block;width:100%;height:34px;color:var(--mizu)}
-section{padding:10px 22px 60px;max-width:960px;margin:0 auto}
+section{padding:10px 22px 58px;max-width:960px;margin:0 auto}
 .tag{display:inline-block;position:relative;left:50%;transform:translateX(-50%);
   font-family:"EB Garamond",serif;font-weight:600;font-size:15px;letter-spacing:.42em;text-indent:.42em;
   color:#fff;padding:16px 26px 20px;margin-bottom:32px;
@@ -61,23 +61,34 @@ section{padding:10px 22px 60px;max-width:960px;margin:0 auto}
   filter:drop-shadow(0 4px 6px rgba(59,110,165,.3));text-shadow:0 1px 2px rgba(50,80,120,.5);
   transform-origin:top center;animation:sway 5.5s ease-in-out infinite}
 @keyframes sway{0%,100%{transform:translateX(-50%) rotate(-.9deg)}50%{transform:translateX(-50%) rotate(.9deg)}}
+.about{font-family:var(--serif);text-align:center;font-size:15px;line-height:2.3;letter-spacing:.07em;
+  max-width:560px;margin:0 auto 34px}
+.chars{display:flex;justify-content:center;gap:26px;flex-wrap:wrap}
+.ch{width:150px;text-align:center}
+.ch img{width:100%;border-radius:14px;border:5px solid #fff;box-shadow:0 6px 16px rgba(110,90,55,.22)}
+.ch .np{display:inline-block;font-family:var(--serif);font-size:12.5px;letter-spacing:.28em;text-indent:.28em;
+  color:#fff;padding:3px 13px;border-radius:3px;margin-top:12px}
+.ch.r .np{background:#474b58}
+.ch.s .np{background:var(--ribbon)}
+.ch p{font-size:12px;color:var(--ink-soft);margin-top:7px;letter-spacing:.03em;line-height:1.7}
 
-.works{display:grid;gap:26px}
+.works{display:grid;gap:24px}
 .work{background:#fffdf7;border:1px solid #e3d9bd;border-radius:18px;overflow:hidden;
   box-shadow:0 8px 22px rgba(110,90,55,.12);text-decoration:none;color:var(--ink);
   transition:transform .2s, box-shadow .2s;display:block}
-.work:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(110,90,55,.2)}
+a.work:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(110,90,55,.2)}
 .work .art{aspect-ratio:16/10;overflow:hidden;background:#eaf3f8}
-.work .art img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
-.work .body{padding:20px 22px 24px}
-.work .kind{display:inline-block;font-size:10.5px;letter-spacing:.22em;color:#fff;
-  background:var(--ribbon);border-radius:999px;padding:3px 12px;margin-bottom:10px}
-.work h2{font-family:var(--serif);font-size:22px;letter-spacing:.12em;margin-bottom:6px}
-.work .cap{font-size:13.5px;color:var(--ink-soft);letter-spacing:.04em}
-.work .go{display:inline-block;margin-top:14px;font-family:var(--serif);font-size:14px;
-  letter-spacing:.18em;color:var(--ribbon)}
-.soon{background:rgba(255,253,247,.6);border:1px dashed #d9cdb0;border-radius:18px;
-  padding:30px 22px;text-align:center;color:var(--ink-soft);font-size:13px;letter-spacing:.1em}
+.work .art img{width:100%;height:100%;object-fit:cover;object-position:center 26%}
+.work .body{padding:18px 20px 22px}
+.work .kind{display:inline-block;font-size:10.5px;letter-spacing:.2em;color:#fff;
+  background:var(--ribbon);border-radius:999px;padding:3px 12px;margin-bottom:9px}
+.work .kind.soon{background:#b9ac8d}
+.work .kind.tt{background:var(--coral)}
+.work h2{font-family:var(--serif);font-size:20px;letter-spacing:.1em;margin-bottom:6px}
+.work .cap{font-size:13px;color:var(--ink-soft);letter-spacing:.03em}
+.work .go{display:inline-block;margin-top:12px;font-family:var(--serif);font-size:13.5px;
+  letter-spacing:.16em;color:var(--ribbon)}
+.work .go.mute{color:var(--ink-soft)}
 
 footer{background:linear-gradient(var(--paper), #f0e6cf);padding:50px 22px 40px;text-align:center}
 .links-head{font-family:"EB Garamond",serif;font-size:15px;font-weight:600;
@@ -100,18 +111,18 @@ footer .credit{margin-top:34px;font-size:11.5px;letter-spacing:.2em;color:var(--
 
 .fx{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
 .fx.in{opacity:1;transform:none}
-@media (min-width:820px){ .works{grid-template-columns:1fr 1fr} }
+@media (min-width:820px){ .works{grid-template-columns:1fr 1fr 1fr} }
 @media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} .fx{opacity:1;transform:none} }
 </style>
 </head>
 <body>
 
-<div class="noren"><span>RIKU &amp; SUBARU</span></div>
+<div class="noren"><span>RIKUSUBA DIARY</span></div>
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>理来と昴</h1>
-    <p class="sub">RIKU &amp; SUBARU</p>
+    <h1>りくすば日記</h1>
+    <p class="sub">RIKUSUBA DIARY</p>
     <p class="lead">ふたりの、いくつもの季節。</p>
   </div>
 </header>
@@ -121,19 +132,59 @@ footer .credit{margin-top:34px;font-size:11.5px;letter-spacing:.2em;color:var(--
   <path d="M0 30 Q 60 18 120 30 T 240 30 T 360 30 T 480 30 T 600 30 T 720 30 T 840 30 T 960 30 T 1080 30 T 1200 30" fill="none" stroke="currentColor" stroke-width="2" opacity=".4"/>
 </svg>
 
+<section id="about">
+  <div class="tag">ABOUT</div>
+  <p class="about fx">理来と昴。<br>
+  恋人になったふたりの、なんでもない日々と、<br>
+  すこし特別な季節を描く物語です。</p>
+  <div class="chars fx">
+    <div class="ch r">
+      <img src="assets/riku.jpg" alt="理来">
+      <span class="np">理 来</span>
+      <p>寡黙で、手が先に出るほう。</p>
+    </div>
+    <div class="ch s">
+      <img src="assets/subaru.jpg" alt="昴">
+      <span class="np">昴</span>
+      <p>よく笑い、よく甘えるほう。</p>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 22 Q 60 8 120 22 T 240 22 T 360 22 T 480 22 T 600 22 T 720 22 T 840 22 T 960 22 T 1080 22 T 1200 22" fill="none" stroke="currentColor" stroke-width="2.5" opacity=".7"/>
+</svg>
+
 <section id="works">
   <div class="tag">WORKS</div>
   <div class="works">
     <a class="work fx" href="beach-house/">
       <div class="art"><img src="assets/work_beachhouse.jpg" alt="渚のふたり計画"></div>
       <div class="body">
-        <span class="kind">ブラウザゲーム</span>
+        <span class="kind">ブラウザゲーム・公開中</span>
         <h2>渚のふたり計画</h2>
         <p class="cap">夏休み、ふたりきりの海の家で過ごす七日間。ノベル×お店やさんミニゲーム。</p>
         <span class="go">くわしく見る ▸</span>
       </div>
     </a>
-    <div class="soon fx">次の季節を準備中です</div>
+    <a class="work fx" href="https://www.tiktok.com/@renfew_ito" target="_blank" rel="noopener">
+      <div class="art"><img src="assets/work_manga.jpg" alt="番外編漫画"></div>
+      <div class="body">
+        <span class="kind tt">番外編・不定期更新</span>
+        <h2>番外編</h2>
+        <p class="cap">ふたりの日常を描いた短編漫画を、TikTokのカルーセルで不定期に公開しています。</p>
+        <span class="go">TikTokで読む ▸</span>
+      </div>
+    </a>
+    <div class="work fx">
+      <div class="art"><img src="assets/work_main.jpg" alt="本編漫画"></div>
+      <div class="body">
+        <span class="kind soon">本編漫画・制作中</span>
+        <h2>本編</h2>
+        <p class="cap">ふたりが出会い、恋人になるまでを描く物語。Kindleでの配信を予定しています。</p>
+        <span class="go mute">続報はTikTokにて</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -144,7 +195,7 @@ footer .credit{margin-top:34px;font-size:11.5px;letter-spacing:.2em;color:var(--
       <a class="link-item" href="https://www.tiktok.com/@renfew_ito" target="_blank" rel="noopener">
         <span class="ico tt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.5a4 4 0 1 1-3.2-3.9"/><path d="M14 4c.4 2.9 2.3 4.7 5 5"/></svg></span>
         <b>TikTok</b>
-        <i>最新情報・告知</i>
+        <i>最新情報・番外編</i>
       </a>
       <a class="link-item" href="https://yuukigenira-dev.github.io/50by50-lp/" target="_blank" rel="noopener">
         <span class="ico fifty"><img src="assets/symbol50.svg" alt="50by50" width="52" height="52"></span>
